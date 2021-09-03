@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 4) do
 
   create_table "accounts", force: :cascade do |t|
-    t.integer "number", null: false
-    t.string "type", null: false
+    t.integer "account_number", null: false
+    t.string "account_type"
   end
 
   create_table "customer_accounts", force: :cascade do |t|
@@ -28,11 +28,12 @@ ActiveRecord::Schema.define(version: 4) do
 
   create_table "customers", force: :cascade do |t|
     t.integer "customer_id", null: false
-    t.string "name", null: false
+    t.string "name"
     t.string "email", null: false
   end
 
   create_table "transactions", force: :cascade do |t|
+    t.integer "transaction_id", null: false
     t.integer "account_id", null: false
     t.decimal "amount", null: false
     t.datetime "transaction_date", null: false
